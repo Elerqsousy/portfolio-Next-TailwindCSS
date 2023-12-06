@@ -5,14 +5,14 @@ import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
 import Logo from './Logo';
-import {GithubIcon, LinkedInIcon, TwitterIcon} from './icons';
+import {GithubIcon, LinkedInIcon} from './icons';
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
   return (
     <Link href={href} className={classNames(className, 'relative group')}>
       {title}
-      <span className={classNames('h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300', {'w-0': router.asPath !== href})}>
+      <span className={classNames('h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:!w-full transition-[width] ease duration-300', {'!w-0': router.asPath !== href})}>
         &nbsp;
       </span>
     </Link>
