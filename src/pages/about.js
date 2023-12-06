@@ -1,8 +1,10 @@
+import React from 'react';
+import Head from 'next/head';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
+
 import AnimatedText from '@/conponents/AnimatedText';
 import Layout from '@/conponents/Layout';
-import { useInView, useMotionValue, useSpring } from 'framer-motion';
-import Head from 'next/head';
-import React from 'react';
+import Skills from '@/conponents/Skills';
 
 const AnimatedNumbers = ({ value }) => {
   const ref = React.useRef(null);
@@ -69,10 +71,18 @@ const about = () => {
             <ul className='col-span-2 flex flex-col items-end justify-between list-none'>
               <li className='flex flex-col items-end justify-center'>
                 <span className='inline-block text-6xl font-bold'>
-                  <AnimatedNumbers value={5} />+
+                  <AnimatedNumbers value={2} />+
                 </span>
                 <h2 className='text-xl font-medium capitalize text-dark/75'>
-                  Satisfied clients
+                  Years in Tech
+                </h2>
+              </li>
+              <li className='flex flex-col items-end justify-center'>
+                <span className='inline-block text-6xl font-bold'>
+                  <AnimatedNumbers value={7} />+
+                </span>
+                <h2 className='text-xl font-medium capitalize text-dark/75'>
+                  Years in Business
                 </h2>
               </li>
               <li className='flex flex-col items-end justify-center'>
@@ -80,19 +90,12 @@ const about = () => {
                   <AnimatedNumbers value={40} />+
                 </span>
                 <h2 className='text-xl font-medium capitalize text-dark/75'>
-                  Projects Completed
-                </h2>
-              </li>
-              <li className='flex flex-col items-end justify-center'>
-                <span className='inline-block text-6xl font-bold'>
-                  <AnimatedNumbers value={2} />+
-                </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75'>
-                  Years of Experience
+                  Tech Projects
                 </h2>
               </li>
             </ul>
           </div>
+          <Skills />
         </Layout>
       </main>
     </>
