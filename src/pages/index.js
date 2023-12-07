@@ -12,7 +12,10 @@ export default function Home() {
     <>
       <Head>
         <title>Mahmoud Rizk</title>
-        <meta name='description' content='A personal portfolio for Mahmoud Rizk. A Full Stack developer working with Ruby on Rails, React, Next.js, Redux, SQL, HTML, CSS, TailwindCSS, Bootstrap, and Sass.' />
+        <meta
+          name='description'
+          content='A personal portfolio for Mahmoud Rizk. A Full Stack developer working with Ruby on Rails, React, Next.js, Redux, SQL, HTML, CSS, TailwindCSS, Bootstrap, and Sass.'
+        />
       </Head>
       <main className='flex items-center text-dark w-full min-h-screen relative'>
         <Layout className='pt-0'>
@@ -45,7 +48,7 @@ export default function Home() {
                   Resume <LinkArrow className={'w-5 ml-1'} />
                 </Link>
                 <Link
-                  href='mailto:marizk.pro.gmail.com'
+                  href='mailto:marizk.pro@gmail.com'
                   target={'_blank'}
                   className='ml-4 text-lg font-medium capitalize text-dark underline'
                 >

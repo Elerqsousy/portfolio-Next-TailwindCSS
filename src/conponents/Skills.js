@@ -37,20 +37,20 @@ const skillList = [
 const Randomized = ({ items }) => {
   const RN = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   let lineLength = RN(1, 5);
-  const spanStructure = (item, end=false) => (
+  const spanStructure = (item, end = false) => (
     <div>
-    <span
-      className='text-dark'
-      style={{
-        fontSize: RN(14, 30),
-        fontWeight: RN(5, 6) * 100,
-        opacity: `0.${RN(5, 9)}`,
-        paddingRight: end ? 200 : RN(2, 4) * 10,
-        paddingLeft: end ? RN(2, 4) * 10 : 0,
-      }}
-    >
-      {item}
-    </span>
+      <span
+        className='text-dark'
+        style={{
+          fontSize: RN(14, 30),
+          fontWeight: RN(5, 6) * 100,
+          opacity: `0.${RN(5, 9)}`,
+          paddingRight: end ? 200 : RN(2, 4) * 10,
+          paddingLeft: end ? RN(2, 4) * 10 : 0,
+        }}
+      >
+        {item}
+      </span>
     </div>
   );
   return (
@@ -58,15 +58,9 @@ const Randomized = ({ items }) => {
       {items.map((item, i) => {
         if (i === lineLength) {
           lineLength += RN(1, 5);
-          return (
-            <div>
-              {spanStructure(item, true)}
-            </div>
-          );
+          return <div>{spanStructure(item, true)}</div>;
         }
-        return (
-          <div>{spanStructure(item)}</div>
-        );
+        return <div>{spanStructure(item)}</div>;
       })}
     </div>
   );
