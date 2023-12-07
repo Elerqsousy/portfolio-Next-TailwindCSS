@@ -10,7 +10,7 @@ const BorderedSection = ({
   return (
     <article
       className={classNames(
-        'w-full h-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12',
+        'w-full h-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light hover:shadow-2xl p-12',
         className
       )}
     >

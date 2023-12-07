@@ -5,14 +5,20 @@ import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
 import Logo from './Logo';
-import {GithubIcon, LinkedInIcon} from './icons';
+import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon } from './icons';
+import useThemeSwitcher from './hooks.js/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
   return (
     <Link href={href} className={classNames(className, 'relative group')}>
       {title}
-      <span className={classNames('h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:!w-full transition-[width] ease duration-300', {'!w-0': router.asPath !== href})}>
+      <span
+        className={classNames(
+          'h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:!w-full transition-[width] ease duration-300',
+          { '!w-0': router.asPath !== href }
+        )}
+      >
         &nbsp;
       </span>
     </Link>
@@ -20,6 +26,7 @@ const CustomLink = ({ href, title, className = '' }) => {
 };
 
 const NavBar = () => {
+  const [mode, setMode] = useThemeSwitcher();
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
       <nav>
@@ -28,19 +35,31 @@ const NavBar = () => {
         <CustomLink href='/projects' title='Projects' className='m-4' />
       </nav>
       <nav className='flex items-center justify-center flex-wrap gap-2'>
-        <motion.a href='/' target='_blank'
-        whileHover={{y:-2}}
-        whileTap={{scale:0.9}}
-        className='w-6 mr-3'
+        <motion.a
+          href='/'
+          target='_blank'
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className='w-6 mr-3'
         >
           <GithubIcon />
         </motion.a>
-        <motion.a href='/' target='_blank'
-                whileHover={{y:-2}}
-                whileTap={{scale:0.9}}
-                className='w-[22px] mr-3'>
+        <motion.a
+          href='/'
+          target='_blank'
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className='w-[22px] mr-3'
+        >
           <LinkedInIcon />
         </motion.a>
+        <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className='ml-3 flex items-center justify-center rounded-full p-1'>
+          {mode === 'dark' ? (
+            <SunIcon className={'fill-dark'} />
+          ) : (
+            <MoonIcon className={'fill-dark'} />
+          )}
+        </button>
       </nav>
       <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
         <Logo />
