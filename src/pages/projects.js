@@ -30,7 +30,7 @@ const Project = ({
       <Link
         href={link}
         target='_blank'
-        className={classNames('m-w-[50%] h-full w-auto cursor-pointer overflow-hidden rounded-lg', {'!w-full': small})}
+        className={classNames('w-1/2 h-full cursor-pointer overflow-hidden rounded-lg', {'!w-full': small})}
       >
         <Image src={img} alt={title} className={classNames({'w-full h-auto':small, 'h-full w-auto': !small})} />
       </Link>
