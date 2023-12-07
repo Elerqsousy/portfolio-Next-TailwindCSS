@@ -16,9 +16,9 @@ const Details = ({ type, time, place, info, link }) => {
         transition={{ duration: 1.5, type: 'spring' }}
       >
         <h3 className='capitalize font-bold text-2xl'>{type}</h3>
-        <span className='capitalize font-medium text-dark/75'>
+        <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
           {time} |{' '}
-          <a target='_blank' href={link} className='text-primary capitalize'>
+          <a target='_blank' href={link} className='text-primary capitalize dark:text-primaryDark'>
             {place}
           </a>
         </span>
@@ -38,11 +38,11 @@ const Education = () => {
 
   return (
     <div className='my-64'>
-      <h2 className='font-bold text-8xl mb-32 w-full text-center'>Education</h2>
+      <h2 className='font-bold text-8xl mb-16 w-full text-center'>Education</h2>
       <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top'
+          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light'
         />
         <ul className='w-full flex flex-col items-start justify-between ml-4'>
           <Details

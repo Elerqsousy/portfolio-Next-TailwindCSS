@@ -40,13 +40,13 @@ const Randomized = ({ items }) => {
   const spanStructure = (item, end = false) => (
     <div>
       <span
-        className='text-dark'
+        className='text-dark dark:text-light'
         style={{
           fontSize: RN(14, 30),
           fontWeight: RN(5, 6) * 100,
           opacity: `0.${RN(5, 9)}`,
-          paddingRight: end ? 200 : RN(2, 4) * 10,
-          paddingLeft: end ? RN(2, 4) * 10 : 0,
+          paddingRight: end ? RN(100, 200) : RN(20, 40),
+          paddingLeft: end ? RN(20, 40) : 0,
         }}
       >
         {item}
