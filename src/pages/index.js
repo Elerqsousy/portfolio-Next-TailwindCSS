@@ -33,18 +33,22 @@ const Home = () => {
                   src={currentTheme === 'dark' ? profilePicDark : profilePicLight}
                   alt='Mahmoud Rizk'
                   className='w-auto h-full rounded-[42%] mt-4 mb-32'
+                  priority
+                  sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
                 />
               ) : (
                 <Image
                   src={profilePicLight}
                   alt='Mahmoud Rizk'
                   className='w-auto h-full rounded-[42%] mt-4 mb-32'
+                  priority
+                  sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
                 />
               )}
             </div>
             <div className='w-2/3 flex flex-col self-center'>
               <AnimatedText
-                text='Turning Vision Into Reality With Code And Design.'
+                text='Turning Vision Into Reality.'
                 className='text-6xl text-left'
               />
               <p className='my-4 text-base font-medium'>

@@ -32,7 +32,10 @@ const Project = ({
         target='_blank'
         className={classNames('w-1/2 h-full cursor-pointer overflow-hidden rounded-lg', {'!w-full !h-auto': small})}
       >
-        <Image src={img} alt={title} className={classNames({'w-full h-auto':small, 'h-full w-auto': !small})} />
+        <Image src={img} alt={title} className={classNames({'w-full h-auto':small, 'h-full w-auto': !small})} 
+                          priority
+                          sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
+                          />
       </Link>
       <div
         className={classNames(
