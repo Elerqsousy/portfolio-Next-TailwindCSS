@@ -30,13 +30,13 @@ const Project = ({
       <Link
         href={link}
         target='_blank'
-        className={classNames('w-1/2 h-full cursor-pointer overflow-hidden rounded-lg', {'!w-full': small})}
+        className={classNames('w-1/2 h-full cursor-pointer overflow-hidden rounded-lg', {'!w-full !h-auto': small})}
       >
         <Image src={img} alt={title} className={classNames({'w-full h-auto':small, 'h-full w-auto': !small})} />
       </Link>
       <div
         className={classNames(
-          'w-1/2 h-full flex flex-col items-start justify-between pl-6 ',
+          'w-1/2 flex flex-1 flex-col items-start justify-between pl-6 ',
           { 'pl-0 mt-4 !w-full': small }
         )}
       >
