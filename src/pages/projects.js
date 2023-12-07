@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { GithubIcon } from '@/conponents/icons';
 import project1 from '../../public/images/projects/portfolio-cover-image.jpg';
-import BorderedSection from '@/conponents/BorderedSection';
+import BorderSection from '@/conponents/BorderSection';
 import Layout from '@/conponents/Layout';
 import AnimatedText from '@/conponents/AnimatedText';
 import classNames from 'classnames';
@@ -21,7 +21,7 @@ const Project = ({
   small = false,
 }) => {
   return (
-    <BorderedSection
+    <BorderSection
       className={classNames({
         'flex-col justify-center !rounded-2xl shadow-none p-6': small,
       })}
@@ -40,7 +40,7 @@ const Project = ({
           { 'pl-0 mt-4 !w-full': small }
         )}
       >
-        <span className='text-primary font-medium text-xl'>{type}</span>
+        <span className='text-primary font-medium text-xl dark:text-primaryDark'>{type}</span>
         <Link
           href={link}
           target='_blank'
@@ -55,10 +55,10 @@ const Project = ({
           </h2>
         </Link>
 
-        {summary && <p className='my-2 font-medium text-dark'>{summary}</p>}
+        {summary && <p className='my-2 font-medium text-dark dark:text-light'>{summary}</p>}
         <ul className='mb-2 flex justify-start items-center flex-wrap '>
           {skills?.map((skill, i) => (
-            <li className='text-sm text-dark/75'>
+            <li className='text-sm text-dark/75 dark:text-light/75'>
               {skill}
               {i < skills.length - 1 && <>, &nbsp;</>}
             </li>
@@ -81,7 +81,7 @@ const Project = ({
               href={link}
               target='_blank'
               className={classNames('font-semibold underline', {
-                'ml-4 rounded-lg bg-dark text-light p-1 px-6 text-lg no-underline':
+                'ml-4 rounded-lg bg-dark text-light p-1 px-6 text-lg no-underline dark:bg-light dark:text-dark':
                   !small,
               })}
             >
@@ -90,7 +90,7 @@ const Project = ({
           )}
         </div>
       </div>
-    </BorderedSection>
+    </BorderSection>
   );
 };
 
