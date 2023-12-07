@@ -1,12 +1,14 @@
+'use client'; // this is a client component
+
 import Link from 'next/link';
 import React from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 import Logo from './Logo';
 import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon } from './icons';
-import useThemeSwitcher from './hooks.js/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
@@ -15,7 +17,7 @@ const CustomLink = ({ href, title, className = '' }) => {
       {title}
       <span
         className={classNames(
-          'h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:!w-full transition-[width] ease duration-300',
+          'h-[1px] inline-block w-full bg-dark absolute left-0 -bottom-0.5 group-hover:!w-full transition-[width] ease duration-300 dark:bg-light',
           { '!w-0': router.asPath !== href }
         )}
       >
@@ -26,9 +28,10 @@ const CustomLink = ({ href, title, className = '' }) => {
 };
 
 const NavBar = () => {
-  const [mode, setMode] = useThemeSwitcher();
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
   return (
-    <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+    <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'>
       <nav>
         <CustomLink href='/' title='Home' className='mr-4' />
         <CustomLink href='/about' title='About' className='m-4' />
@@ -53,12 +56,15 @@ const NavBar = () => {
         >
           <LinkedInIcon />
         </motion.a>
-        <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className='ml-3 flex items-center justify-center rounded-full p-1'>
-          {mode === 'dark' ? (
-            <SunIcon className={'fill-dark'} />
-          ) : (
-            <MoonIcon className={'fill-dark'} />
+        <button
+          onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
+          className={classNames(
+            'ml-3 flex items-center justify-center rounded-full p-1 bg-light text-dark',
+            { '!bg-dark !text-light': currentTheme !== 'dark' }
           )}
+        >
+            <SunIcon className={classNames('fill-dark', {'hidden': currentTheme !== 'dark'})} />
+            <MoonIcon className={classNames('fill-dark', {'hidden': currentTheme === 'dark'})} />
         </button>
       </nav>
       <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
