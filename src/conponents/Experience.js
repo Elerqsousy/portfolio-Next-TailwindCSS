@@ -43,8 +43,11 @@ const Experience = () => {
   });
 
   return (
-    <div className='my-64'>
-      <h2 className='font-bold text-8xl mb-16 w-full text-center'>
+    <div className='mt-64 lg:mt-32'>
+      <h2
+        className='font-bold text-8xl mb-16 w-full text-center 
+      lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8'
+      >
         Experience
       </h2>
       <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden'>
