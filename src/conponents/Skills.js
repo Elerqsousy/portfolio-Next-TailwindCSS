@@ -45,7 +45,7 @@ const Randomized = ({ items }) => {
           fontSize: RN(14, 30),
           fontWeight: RN(5, 6) * 100,
           opacity: `0.${RN(5, 9)}`,
-          paddingRight: end ? RN(100, 200) : RN(20, 40),
+          paddingRight: end ? RN(100, 150) : RN(20, 40),
           paddingLeft: end ? RN(20, 40) : 0,
         }}
       >
@@ -69,7 +69,8 @@ const Randomized = ({ items }) => {
 const Skills = () => {
   return (
     <div>
-      <h2 className='font-bold text-8xl mt-64 w-full text-center mb-16'>
+      <h2 className='font-bold text-8xl mt-64 w-full text-center mb-16 
+      lg:mt-32 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8'>
         Skills
       </h2>
       <Randomized items={skillList} />
