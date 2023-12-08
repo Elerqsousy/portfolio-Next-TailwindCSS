@@ -43,9 +43,9 @@ const about = () => {
       </Head>
       <main className='flex w-full flex-col items-center justify-center dark:text:light'>
         <Layout className='pt-16'>
-          <AnimatedText text='Passion Fuels Purpose!' className='mb-16' />
-          <div className='grid w-full grid-cols-8 gap-16'>
-            <div className='col-span-6 flex flex-col items-start justify-start'>
+          <AnimatedText text='Passion Fuels Purpose!' className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+          <div className='grid w-full grid-cols-8 gap-16 md:gap-8'>
+            <div className='col-span-6 flex flex-col items-start justify-start md:col-span-8'>
               <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>
                 About me
               </h2>
@@ -70,28 +70,34 @@ const about = () => {
               </p>
             </div>
 
-            <ul className='col-span-2 flex flex-col items-end justify-between list-none'>
-              <li className='flex flex-col items-end justify-center'>
-                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark'>
+            <ul className='col-span-2 flex flex-col items-end justify-between list-none md:col-span-8 md:flex-row'>
+              <li className='flex flex-col items-end justify-center lg:items-center'>
+                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark
+                md:flex md:justify-center md:w-full md:text-6xl sm:text-5xl xs:text-4xl'>
                   <AnimatedNumbers value={2} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75
+                xl:text-center md:text-lg sm:text-base xs:text-sm'>
                   Years in Tech
                 </h2>
               </li>
-              <li className='flex flex-col items-end justify-center'>
-                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark'>
-                  <AnimatedNumbers value={7} />+
+              <li className='flex flex-col items-end justify-center lg:items-center'>
+                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark
+                md:flex md:justify-center md:w-full md:text-6xl sm:text-5xl xs:text-4xl'>
+                <AnimatedNumbers value={7} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75
+                xl:text-center md:text-lg sm:text-base xs:text-sm'>
                   Years in Business
                 </h2>
               </li>
-              <li className='flex flex-col items-end justify-center'>
-                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark'>
+              <li className='flex flex-col items-end justify-center lg:items-center'>
+                <span className='inline-block text-6xl font-bold text-primary dark:text-primaryDark
+                md:flex md:justify-center md:w-full md:text-6xl sm:text-5xl xs:text-4xl'>
                   <AnimatedNumbers value={40} />+
                 </span>
-                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
+                <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75
+                xl:text-center md:text-lg sm:text-base xs:text-sm'>
                   Tech Projects
                 </h2>
               </li>
