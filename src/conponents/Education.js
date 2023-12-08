@@ -18,7 +18,11 @@ const Details = ({ type, time, place, info, link }) => {
         <h3 className='capitalize font-bold text-2xl'>{type}</h3>
         <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
           {time} |{' '}
-          <a target='_blank' href={link} className='text-primary capitalize dark:text-primaryDark'>
+          <a
+            target='_blank'
+            href={link}
+            className='text-primary capitalize dark:text-primaryDark'
+          >
             {place}
           </a>
         </span>
@@ -37,8 +41,13 @@ const Education = () => {
   });
 
   return (
-    <div className='my-64'>
-      <h2 className='font-bold text-8xl mb-16 w-full text-center'>Education</h2>
+    <div className='my-64 lg:my-32'>
+      <h2
+        className='font-bold text-8xl mb-16 w-full text-center
+      lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8'
+      >
+        Education
+      </h2>
       <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
