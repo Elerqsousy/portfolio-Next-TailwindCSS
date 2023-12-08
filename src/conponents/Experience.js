@@ -7,7 +7,8 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'
+      className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between
+      md:w-[80%]'
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -15,7 +16,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         whileInView={{ y: 0 }}
         transition={{ duration: 1.5, type: 'spring' }}
       >
-        <h3 className='capitalize font-bold text-2xl'>
+        <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>
           {position}&nbsp;
           <a
             target='_blank'
@@ -25,10 +26,10 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
             @{company}
           </a>
         </h3>
-        <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+        <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
           {time} | {address}
         </span>
-        <p className='font-medium w-full'>{work}</p>
+        <p className='font-medium w-full md:text-sm'>{work}</p>
       </motion.div>
     </li>
   );
@@ -50,12 +51,13 @@ const Experience = () => {
       >
         Experience
       </h2>
-      <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden'>
+      <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden lg:w-[90%] md:w-full'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light'
+          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+          md:mt-3 xs:mt-4 xs:w-[2px] md:left-[28px] xs:left-[19px]'
         />
-        <ul className='w-full flex flex-col items-start justify-between ml-4'>
+        <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
           <Details
             position='Software Engineer'
             company='Google'
