@@ -61,7 +61,7 @@ const Project = ({
         {summary && <p className='my-2 font-medium text-dark dark:text-light'>{summary}</p>}
         <ul className='mb-2 flex justify-start items-center flex-wrap '>
           {skills?.map((skill, i) => (
-            <li className='text-sm text-dark/75 dark:text-light/75'>
+            <li  key={skill + '-' + i} className='text-sm text-dark/75 dark:text-light/75'>
               {skill}
               {i < skills.length - 1 && <>, &nbsp;</>}
             </li>

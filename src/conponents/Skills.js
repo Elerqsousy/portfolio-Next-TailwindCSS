@@ -58,9 +58,9 @@ const Randomized = ({ items }) => {
       {items.map((item, i) => {
         if (i === lineLength) {
           lineLength += RN(1, 5);
-          return <div>{spanStructure(item, true)}</div>;
+          return <div key={item + '-' + i}>{spanStructure(item, true)}</div>;
         }
-        return <div>{spanStructure(item)}</div>;
+        return <div  key={item + '-' + i}>{spanStructure(item)}</div>;
       })}
     </div>
   );
