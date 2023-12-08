@@ -38,7 +38,7 @@ const Experience = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'center center'],
+    offset: ['start end', 'center start'],
     once: true,
   });
 
