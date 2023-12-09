@@ -22,7 +22,7 @@ const ContactForm = () => {
         handleClose();
       }, 3000);
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, handleClose]);
 
   return (
     <>
