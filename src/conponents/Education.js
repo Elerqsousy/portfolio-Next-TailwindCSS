@@ -7,7 +7,8 @@ const Details = ({ type, time, place, info, link }) => {
   return (
     <li
       ref={ref}
-      className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'
+      className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col
+      items-center justify-between md:w-[80%]'
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -15,18 +16,18 @@ const Details = ({ type, time, place, info, link }) => {
         whileInView={{ y: 0 }}
         transition={{ duration: 1.5, type: 'spring' }}
       >
-        <h3 className='capitalize font-bold text-2xl'>{type}</h3>
-        <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
-          {time} |{' '}
+        <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>{type}</h3>
+        <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
+          {time} |&nbsp;
           <a
             target='_blank'
             href={link}
-            className='text-primary capitalize dark:text-primaryDark'
+            className='text-primary capitalize hover:underline dark:text-primaryDark'
           >
             {place}
           </a>
         </span>
-        <p className='font-medium w-full'>{info}</p>
+        <p className='font-medium w-full md:text-sm'>{info}</p>
       </motion.div>
     </li>
   );
@@ -48,12 +49,13 @@ const Education = () => {
       >
         Education
       </h2>
-      <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden'>
+      <div ref={ref} className='w-[75%] mx-auto relative overflow-hidden lg:w-[90%] md:w-full'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light'
+          className='mt-2 absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+          md:mt-3 xs:mt-4 xs:w-[2px] md:left-[28px] xs:left-[19px]'
         />
-        <ul className='w-full flex flex-col items-start justify-between ml-4'>
+        <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
           <Details
             type='Bachelor Of Science In Computer Science'
             place='Google'
