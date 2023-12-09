@@ -30,8 +30,10 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
           {time} | {address}
         </span>
         <div className='flex flex-col w-full'>
-          {work.map((item) => (
-            <p className='font-medium w-full md:text-sm'>- {item}</p>
+          {work.map((item, i) => (
+            <p key={item + '-' + i} className='font-medium w-full md:text-sm'>
+              - {item}
+            </p>
           ))}
         </div>
       </motion.div>
