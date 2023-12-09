@@ -6,11 +6,23 @@ import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
 import { GithubIcon } from '@/conponents/icons';
-import project1 from '../../public/images/projects/portfolio-cover-image.jpg';
 import BorderSection from '@/conponents/BorderSection';
 import Layout from '@/conponents/Layout';
 import AnimatedText from '@/conponents/AnimatedText';
 import TransitionEffect from '@/conponents/TransitionEffect';
+
+import project1 from '../../public/images/projects/grandeur.png';
+import project2 from '../../public/images/projects/8doors.png';
+import project3 from '../../public/images/projects/expensable.png';
+import project4 from '../../public/images/projects/bookstore.png';
+import project5 from '../../public/images/projects/bloowatch.png';
+import project6 from '../../public/images/projects/themusical.png';
+import project7 from '../../public/images/projects/todo.png';
+import project8 from '../../public/images/projects/spacex.png';
+import project9 from '../../public/images/projects/mathmagicians.png';
+import project10 from '../../public/images/projects/gameleadership.gif';
+import project11 from '../../public/images/projects/cryptomaster.png';
+
 
 const FramerImage = motion(Image);
 
@@ -24,11 +36,11 @@ const Project = ({
   skills,
   small = false,
 }) => {
-
   return (
     <BorderSection
       className={classNames({
-        'flex-col justify-center !rounded-2xl p-6 dark:hover:shadow-[5px_5px_13px_light] xs:p-4': small,
+        'flex-col justify-center !rounded-2xl p-6 dark:hover:shadow-[5px_5px_13px_light] xs:p-4':
+          small,
       })}
       shadow={small ? false : true}
     >
@@ -65,9 +77,12 @@ const Project = ({
           className='hover:underline underline-offset-2'
         >
           <h2
-            className={classNames('my-2 w-full text-left text-4xl font-bold sm:text-base', {
-              'text-3xl lg:text-2xl': small,
-            })}
+            className={classNames(
+              'my-2 w-full text-left text-4xl font-bold sm:text-base',
+              {
+                'text-3xl lg:text-2xl': small,
+              }
+            )}
           >
             {title}
           </h2>
@@ -105,10 +120,12 @@ const Project = ({
             <Link
               href={link}
               target='_blank'
-              className={classNames('font-semibold', {'md:text-base hover:underline': small,
-                'ml-4 rounded-lg bg-dark hover:bg-dark/75 text-light p-1 px-6 text-lg': !small,
-                'dark:bg-light dark:hover:bg-light/75 dark:text-dark sm:px-4 sm:text-base': !small,
-                
+              className={classNames('font-semibold', {
+                'md:text-base hover:underline': small,
+                'ml-4 rounded-lg bg-dark hover:bg-dark/75 text-light p-1 px-6 text-lg':
+                  !small,
+                'dark:bg-light dark:hover:bg-light/75 dark:text-dark sm:px-4 sm:text-base':
+                  !small,
               })}
             >
               Live Demo
@@ -140,61 +157,162 @@ const projects = () => {
           <div className='grid grid-cols-12 gap-x-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 sm:gap-y-16'>
             <div className='col-span-12'>
               <Project
-                title='Crypto Screener Application'
-                summary='A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-            It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-            local currency.'
-                type='Featureed Project'
-                link='/'
-                github='/'
+                title='Grandeur'
+                summary='A sophisticated Real Estate platform designed to seamlessly connect buyers and sellers, streamlining the process of booking check-up visits to captivating properties.'
+                type='React on Rails Project'
+                link='https://grandeur-tx4o.onrender.com/'
+                github='https://github.com/Elerqsousy/grandeur-backend'
                 img={project1}
                 skills={[
+                  'Ruby-on-Rails',
+                  'PostgreSQL',
                   'React',
+                  'Redux',
+                  'Typescript',
+                  'Bootstrap',
                   'Tailwind CSS',
-                  'Context API',
-                  'React Router',
-                  'Recharts',
                 ]}
+              />
+            </div>
+            <div className='col-span-12'>
+              <Project
+                title='8doors'
+                summary='8doors is a template to be used for development. It is also ment to be a platform for doctors and clinics, where you can communicate, connect, and see feed of each doctor, and connect with clinic as a doctor and preserve your appoinments.'
+                type='Next.js Project'
+                link='https://drive.google.com/file/d/1Z2vLvXo7yNDr-q3I2Xbdlzftt-E0HBs8/view?usp=share_link'
+                github='https://github.com/Elerqsousy/8doors'
+                img={project2}
+                skills={[
+                  'Next.js',
+                  'Redux Toolkit',
+                  'Context Api',
+                  'TailwindCSS',
+                ]}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Expensable'
+                type='Rails Project'
+                link='https://expensable.onrender.com/'
+                github='https://github.com/Elerqsousy/ror_fintech'
+                small={true}
+                img={project3}
+                skills={[
+                  'Ruby-on-Rails',
+                  'PostgreSQL',
+                  'Device',
+                  'CanCanCan',
+                  'Bootstrap',
+                ]}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Bookstore'
+                type='React Project'
+                link='https://chimerical-daifuku-2e3358.netlify.app/'
+                github='https://github.com/Elerqsousy/bookstore/'
+                small={true}
+                img={project4}
+                skills={[
+                  'React.js',
+                  'Redux',
+                  'Open-source Restful API',
+                  'Sass',
+                ]}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='bloowatch'
+                type='Next.js Project'
+                link='https://drive.google.com/file/d/18ocJTP93TDdF3mJ6UlUCCO55E6aE4B6S/view?usp=share_link'
+                github='https://github.com/Elerqsousy/next-app-cart'
+                small={true}
+                img={project5}
+                skills={[
+                  'React.js',
+                  'Redux Toolkit',
+                  'Context API',
+                  'TailwindCSS',
+                ]}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='The Musical'
+                type='Js Project'
+                link='https://elerqsousy.github.io/musical-concert-page/'
+                github='https://github.com/Elerqsousy/musical-concert-page'
+                small={true}
+                img={project6}
+                skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='To Do List'
+                type='Js Project'
+                link='https://elerqsousy.github.io/to-do-list/'
+                github='https://github.com/Elerqsousy/to-do-list'
+                small={true}
+                img={project7}
+                skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Space X'
+                type='React Project'
+                link='https://gorgeous-melba-746edd.netlify.app/'
+                github='https://github.com/Elerqsousy/spacex'
+                small={true}
+                img={project8}
+                skills={[
+                  'React',
+                  'Redux Toolkit',
+                  'ECMAScript-6',
+                  'Open-source Restful API',
+                  'CSS3',
+                ]}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Math Magicians'
+                type='React Project'
+                link='https://fancy-khapse-193ed3.netlify.app/'
+                github='https://github.com/Elerqsousy/calculator-spa'
+                small={true}
+                img={project9}
+                skills={["React", "ECMA-5 JS", "CSS3", "Netlify"]}
               />
             </div>
 
             <div className='col-span-6 sm:col-span-12'>
               <Project
-                title='Crypto Screener Application'
-                type='Featureed Project'
-                link='/'
-                github='/'
+                title='Game LeaderShip Board'
+                type='Js Project'
+                link='https://elerqsousy.github.io/leaderboard-api'
+                github='https://github.com/Elerqsousy/leaderboard-api'
                 small={true}
-                img={project1}
-                skills={[
-                  'React',
-                  'Tailwind CSS',
-                  'Context API',
-                  'React Router',
-                  'Recharts',
-                  'Tailwind CSS',
-                  'Context API',
-                  'React Router',
-                  'Recharts',
-                ]}
+                img={project10}
+                skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
               />
             </div>
             <div className='col-span-6 sm:col-span-12'>
               <Project
-                title='Crypto Screener Application'
-                type='Featureed Project'
-                github='/'
+                title='Crypto Master'
+                type='React Project'
+                link='https://adorable-creponne-58a432.netlify.app/'
+                github='https://github.com/Elerqsousy/crypto-master'
                 small={true}
-                img={project1}
-                skills={[
-                  'React',
-                  'Tailwind CSS',
-                  'Context API',
-                  'React Router',
-                  'Recharts',
-                ]}
+                img={project11}
+                skills={["React", "ECMA-6 JS", "CSS3", "Netlify"]}
               />
             </div>
+
           </div>
         </Layout>
       </main>
