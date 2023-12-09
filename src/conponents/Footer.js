@@ -1,8 +1,12 @@
 import React from 'react';
-import Layout from './Layout';
 import Link from 'next/link';
 
+import Layout from './Layout';
+import { ContactFormContext } from './Context';
+
 const Footer = () => {
+  const { setIsOpen } = React.useContext(ContactFormContext);
+
   return (
     <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg
     dark:text-light dark:border-light md:text-sm'>
@@ -19,13 +23,12 @@ const Footer = () => {
             Riz
           </Link>
         </div>
-        <Link
+        <button
           className='underline underline-offset-2 md:hidden'
-          target={'_blank'}
-          href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
+          onClick={() => setIsOpen(true)}
         >
           Hire me!
-        </Link>
+        </button>
       </Layout>
     </footer>
   );
