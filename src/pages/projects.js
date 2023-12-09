@@ -10,6 +10,7 @@ import project1 from '../../public/images/projects/portfolio-cover-image.jpg';
 import BorderSection from '@/conponents/BorderSection';
 import Layout from '@/conponents/Layout';
 import AnimatedText from '@/conponents/AnimatedText';
+import TransitionEffect from '@/conponents/TransitionEffect';
 
 const FramerImage = motion(Image);
 
