@@ -67,7 +67,8 @@ const Experience = () => {
         <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
           <Details
             position='Full Stack Web Developer'
-            company='Google'
+            company='Self-Employed'
+            companyLink='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
             time='January 2022 – Present'
             address='Remote'
             work={[
