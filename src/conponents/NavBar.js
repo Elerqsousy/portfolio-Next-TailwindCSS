@@ -43,7 +43,7 @@ const NavBar = () => {
     z-10 lg:px-16 md:px-12 sm:px-8'>
 
       {/* haburger menu button */}
-      <button ref={ref} onClick={handleclick} className='z-30 flex-col justify-center items-center hidden lg:flex'>
+      <button type='button' ref={ref} onClick={handleclick} className='z-30 flex-col justify-center items-center hidden lg:flex'>
         <span className={classNames('bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -translate-y-0.5', {'rotate-45 !translate-y-1': isOpen})}></span>
         <span className={classNames('bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm m-0.5 opacity-100', {'!opacity-0': isOpen})}></span>
         <span className={classNames('bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5', {'-rotate-45 !-translate-y-1': isOpen})}></span>
@@ -94,6 +94,7 @@ const NavBar = () => {
             </motion.a>
           </nav>
           <button
+              type='button'
               onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
               className={classNames(
                 ' flex items-center justify-center rounded-full p-1 bg-light text-dark border border-dark/25 absolute top-8 right-8',
@@ -135,6 +136,7 @@ const NavBar = () => {
           <LinkedInIcon />
         </motion.a>
         <button
+          type='button'
           onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
           className={classNames(
             ' flex items-center justify-center rounded-full p-1 bg-light text-dark',
