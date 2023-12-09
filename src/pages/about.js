@@ -7,6 +7,7 @@ import Layout from '@/conponents/Layout';
 import Skills from '@/conponents/Skills';
 import Experience from '@/conponents/Experience';
 import Education from '@/conponents/Education';
+import TransitionEffect from '@/conponents/TransitionEffect';
 
 const AnimatedNumbers = ({ value }) => {
   const ref = React.useRef(null);
@@ -41,6 +42,7 @@ const about = () => {
           content='Mahmoud Rizk Portfolio. About and Experience Section.'
         />
       </Head>
+      <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center dark:text:light'>
         <Layout className='pt-16'>
           <AnimatedText text='Passion Fuels Purpose!' className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
