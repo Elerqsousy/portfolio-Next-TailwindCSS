@@ -112,9 +112,9 @@ const NavBar = () => {
       {/* bigger screen menu */}
       <div className='w-full flex justify-between items-center lg:hidden'>
       <nav>
-        <CustomLink href='/' title='Home' className='mr-4' />
-        <CustomLink href='/about' title='About' className='m-4' />
-        <CustomLink href='/projects' title='Projects' className='m-4' />
+        <CustomLink href='/' title='Home' className='mr-4 hover:opacity-60' />
+        <CustomLink href='/about' title='About' className='m-4 hover:opacity-60' />
+        <CustomLink href='/projects' title='Projects' className='m-4 hover:opacity-60' />
       </nav>
       
       <nav className='flex items-center justify-center flex-wrap gap-2'>
