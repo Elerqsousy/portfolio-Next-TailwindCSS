@@ -23,7 +23,6 @@ import project9 from '../../public/images/projects/mathmagicians.png';
 import project10 from '../../public/images/projects/gameleadership.gif';
 import project11 from '../../public/images/projects/cryptomaster.png';
 
-
 const FramerImage = motion(Image);
 
 const Project = ({
@@ -48,7 +47,7 @@ const Project = ({
         href={link || github}
         target='_blank'
         className={classNames(
-          'w-1/2 h-auto cursor-pointer overflow-hidden rounded-lg lg:w-full',
+          'w-1/2 h-auto cursor-pointer rounded-lg lg:w-full max-h-[50vh] overflow-hidden',
           { '!w-full': small }
         )}
       >
@@ -174,7 +173,7 @@ const projects = () => {
                 ]}
               />
             </div>
-            <div className='col-span-12'>
+            {/* <div className='col-span-12'>
               <Project
                 title='8doors'
                 summary='8doors is a template to be used for development. It is also ment to be a platform for doctors and clinics, where you can communicate, connect, and see feed of each doctor, and connect with clinic as a doctor and preserve your appoinments.'
@@ -189,10 +188,11 @@ const projects = () => {
                   'TailwindCSS',
                 ]}
               />
-            </div>
+            </div> */}
             <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='Expensable'
+                summary='A Mobile-based Web Application for expense categorization and tracking. It helps users to keep track of their expenses and incomes, and to manage their budgets.'
                 type='Rails Project'
                 link='https://expensable.onrender.com/'
                 github='https://github.com/Elerqsousy/ror_fintech'
@@ -210,6 +210,7 @@ const projects = () => {
             <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='Bookstore'
+                summary='This is a simple SPA, single pgae application for a bookstore app. Users can add and save books with book name, author name, category, and progress. They can also search and categorize books according to their categories.'
                 type='React Project'
                 link='https://chimerical-daifuku-2e3358.netlify.app/'
                 github='https://github.com/Elerqsousy/bookstore/'
@@ -223,7 +224,7 @@ const projects = () => {
                 ]}
               />
             </div>
-            <div className='col-span-6 sm:col-span-12'>
+            {/* <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='bloowatch'
                 type='Next.js Project'
@@ -238,10 +239,11 @@ const projects = () => {
                   'TailwindCSS',
                 ]}
               />
-            </div>
+            </div> */}
             <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='The Musical'
+                summary="An imaginary musical yearly event that features event details and star singers. It's built with a responsive design."
                 type='Js Project'
                 link='https://elerqsousy.github.io/musical-concert-page/'
                 github='https://github.com/Elerqsousy/musical-concert-page'
@@ -253,6 +255,7 @@ const projects = () => {
             <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='To Do List'
+                summary='A simple To Do List online application that allows users to save, and manipulate their to-dos, and save their list when application is closed.'
                 type='Js Project'
                 link='https://elerqsousy.github.io/to-do-list/'
                 github='https://github.com/Elerqsousy/to-do-list'
@@ -261,9 +264,47 @@ const projects = () => {
                 skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
               />
             </div>
+
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Math Magicians'
+                summary='This is a simple SPA for a caluculator. It consists of 3 pages; Home: with an intro about the app, Calculator: were users can have access to a fully fledged calculator and a Quote page.'
+                type='React Project'
+                link='https://fancy-khapse-193ed3.netlify.app/'
+                github='https://github.com/Elerqsousy/calculator-spa'
+                small={true}
+                img={project9}
+                skills={['React', 'ECMA-5 JS', 'CSS3', 'Netlify']}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Game LeaderShip Board'
+                summary='A simple design for a leaderboard list. All data are stored on Leaderboard API. Upon page load, List of scores get updated from the API. Upon submitting names and scores, names are added to the list of game scores on the API. Upon clicking refresh, list of names are updated and displayed.'
+                type='Js Project'
+                link='https://elerqsousy.github.io/leaderboard-api'
+                github='https://github.com/Elerqsousy/leaderboard-api'
+                small={true}
+                img={project10}
+                skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
+              />
+            </div>
+            <div className='col-span-6 sm:col-span-12'>
+              <Project
+                title='Crypto Master'
+                summary='This is a simple SPA for a caluculator. It consists of 3 pages; Home: with an intro about the app, Calculator: were users can have access to a fully fledged calculator and a Quote page.'
+                type='React Project'
+                link='https://adorable-creponne-58a432.netlify.app/'
+                github='https://github.com/Elerqsousy/crypto-master'
+                small={true}
+                img={project11}
+                skills={['React', 'ECMA-6 JS', 'CSS3', 'Netlify']}
+              />
+            </div>
             <div className='col-span-6 sm:col-span-12'>
               <Project
                 title='Space X'
+                summary='This is an application to reservce space rockets and mission. The Rockets section displays a list of all available SpaceX rockets. Users can book each rocket by clicking the reservation button or cancel the previously made booking. The Missions section displays a list of current missions along with their brief description and participation status. There is also a button next to each mission that allows users to join the selected mission or leave the mission the user joined earlier. The My Profile section displays all reserved rockets and space missions.'
                 type='React Project'
                 link='https://gorgeous-melba-746edd.netlify.app/'
                 github='https://github.com/Elerqsousy/spacex'
@@ -278,41 +319,6 @@ const projects = () => {
                 ]}
               />
             </div>
-            <div className='col-span-6 sm:col-span-12'>
-              <Project
-                title='Math Magicians'
-                type='React Project'
-                link='https://fancy-khapse-193ed3.netlify.app/'
-                github='https://github.com/Elerqsousy/calculator-spa'
-                small={true}
-                img={project9}
-                skills={["React", "ECMA-5 JS", "CSS3", "Netlify"]}
-              />
-            </div>
-
-            <div className='col-span-6 sm:col-span-12'>
-              <Project
-                title='Game LeaderShip Board'
-                type='Js Project'
-                link='https://elerqsousy.github.io/leaderboard-api'
-                github='https://github.com/Elerqsousy/leaderboard-api'
-                small={true}
-                img={project10}
-                skills={['JS', 'HTML5', 'Webpack', 'CSS3', 'GitHub Pages']}
-              />
-            </div>
-            <div className='col-span-6 sm:col-span-12'>
-              <Project
-                title='Crypto Master'
-                type='React Project'
-                link='https://adorable-creponne-58a432.netlify.app/'
-                github='https://github.com/Elerqsousy/crypto-master'
-                small={true}
-                img={project11}
-                skills={["React", "ECMA-6 JS", "CSS3", "Netlify"]}
-              />
-            </div>
-
           </div>
         </Layout>
       </main>
