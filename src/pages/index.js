@@ -1,5 +1,6 @@
-"use client"
+'use client';
 
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,10 +10,12 @@ import Layout from '@/conponents/Layout';
 import AnimatedText from '@/conponents/AnimatedText';
 import { LinkArrow } from '@/conponents/icons';
 import TransitionEffect from '@/conponents/TransitionEffect';
+import { ContactFormContext } from '@/conponents/Context';
 import profilePicLight from '../../public/images/profile/riz-art.png';
 import profilePicDark from '../../public/images/profile/riz-art-dark.png';
 
 const Home = () => {
+  const { setIsOpen } = React.useContext(ContactFormContext);
   const { systemTheme, theme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
@@ -30,23 +33,15 @@ const Home = () => {
         <Layout className='!pt-0'>
           <div className='flex items-center justify-between w-full gap-16 lg:flex-col sm:gap-10'>
             <div className='w-1/3 min-w-[350px] flex justify-center'>
-              {currentTheme === 'dark' ? (
-                <Image
-                  src={currentTheme === 'dark' ? profilePicDark : profilePicLight}
-                  alt='Mahmoud Rizk'
-                  className='w-auto h-full rounded-[42%] mt-4 mb-32 lg:hidden md:inline-block md:w-[80vw] md:!m-0'
-                  priority
-                  sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
-                />
-              ) : (
-                <Image
-                  src={profilePicLight}
-                  alt='Mahmoud Rizk'
-                  className='w-auto h-full rounded-[42%] mt-4 mb-32 lg:hidden md:inline-block md:w-[80vw] md:!m-0'
-                  priority
-                  sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
-                />
-              )}
+              <Image
+                src={
+                  currentTheme === 'dark' ? profilePicDark : profilePicLight
+                }
+                alt='Mahmoud Rizk'
+                className='w-auto h-full rounded-[42%] mb-12 lg:hidden md:inline-block md:w-[80vw] md:!m-0'
+                priority
+                sizes='(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 50vw'
+              />
             </div>
             <div className='w-2/3 flex flex-col items-center self-center lg:w-full lg:text-center'>
               <AnimatedText
@@ -54,10 +49,11 @@ const Home = () => {
                 className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl'
               />
               <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
-                web development.
+                As an experienced Fullstack developer, I am committed to
+                transforming concepts into cutting-edge web applications. I
+                invite you to explore my recent projects, which demonstrate my
+                proficiency in various programming languages and technical
+                skills.
               </p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
                 <Link
@@ -72,14 +68,13 @@ const Home = () => {
                 >
                   Resume <LinkArrow className={'w-5 ml-1'} />
                 </Link>
-                <Link
-                  href='mailto:marizk.pro@gmail.com'
-                  target={'_blank'}
+                <button
+                  onClick={() => setIsOpen(true)}
                   className='ml-4 text-lg font-medium capitalize text-dark underline dark:text-light
                   md:text-base'
                 >
                   Contact
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -87,6 +82,6 @@ const Home = () => {
       </main>
     </>
   );
-}
+};
 
 export default Home;
