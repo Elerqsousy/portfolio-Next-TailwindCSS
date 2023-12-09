@@ -1,6 +1,8 @@
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
+import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 import '@/styles/globals.css';
 
@@ -13,6 +15,7 @@ const montserrat = Montserrat({
 });
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -24,7 +27,9 @@ export default function App({ Component, pageProps }) {
       >
         <ThemeProvider enableSystem={true} attribute='class'>
           <NavBar />
-          <Component {...pageProps} />
+          <AnimatePresence mode='wait'>
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
           <Footer />
         </ThemeProvider>
       </main>
