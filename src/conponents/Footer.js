@@ -13,10 +13,10 @@ const Footer = () => {
       <Layout className='!py-8 flex items-center justify-between sm:flex-col lg:!py-4'>
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <div className='flex items-center'>
-          Built with <span className='text-xl px-1 md:text-base'>&#9825;</span>{' '}
+          Built with <span className='text-xl px-1 md:text-base'>&#9825;</span>&#9825;
           by&nbsp;
           <Link
-            className='underline underline-offset-2 text-primary dark:text-primaryDark'
+            className='underline underline-offset-2 hover:opacity-75'
             target={'_blank'}
             href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
           >
@@ -24,7 +24,7 @@ const Footer = () => {
           </Link>
         </div>
         <button
-          className='underline underline-offset-2 md:hidden'
+          className='underline underline-offset-2 hover:opacity-75 text-primary dark:text-primaryDark'
           onClick={() => setIsOpen(true)}
         >
           Hire me!
