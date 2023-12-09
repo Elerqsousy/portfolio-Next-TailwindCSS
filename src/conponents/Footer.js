@@ -5,14 +5,14 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg
-    dark:text-light dark:border-light md:text-base'>
-      <Layout className='!py-8 flex items-center justify-between md:flex-col lg:!py-4'>
+    dark:text-light dark:border-light md:text-sm'>
+      <Layout className='!py-8 flex items-center justify-between sm:flex-col lg:!py-4'>
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <div className='flex items-center'>
-          Built with <span className='text-primary dark:text-primaryDark text-xl px-1'>&#9825;</span>{' '}
+          Built with <span className='text-xl px-1 md:text-sm'>&#9825;</span>{' '}
           by&nbsp;
           <Link
-            className='underline underline-offset-2'
+            className='underline underline-offset-2 text-primary dark:text-primaryDark'
             target={'_blank'}
             href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
           >
