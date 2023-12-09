@@ -129,6 +129,7 @@ const projects = () => {
           content='Mahmoud Rizk Portfolio. About and Experience Section.'
         />
       </Head>
+      <TransitionEffect />
       <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText
