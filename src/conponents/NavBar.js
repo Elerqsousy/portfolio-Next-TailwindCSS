@@ -75,7 +75,7 @@ const NavBar = () => {
           
           <nav className='flex items-center justify-center flex-wrap gap-6 mb-4 sm:gap:3'>
             <motion.a
-              href='/'
+              href='https://github.com/Elerqsousy'
               target='_blank'
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -84,7 +84,7 @@ const NavBar = () => {
               <GithubIcon />
             </motion.a>
             <motion.a
-              href='/'
+              href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
               target='_blank'
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -117,7 +117,7 @@ const NavBar = () => {
       
       <nav className='flex items-center justify-center flex-wrap gap-2'>
         <motion.a
-          href='/'
+          href='https://github.com/Elerqsousy'
           target='_blank'
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
@@ -126,7 +126,7 @@ const NavBar = () => {
           <GithubIcon />
         </motion.a>
         <motion.a
-          href='/'
+          href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
           target='_blank'
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
