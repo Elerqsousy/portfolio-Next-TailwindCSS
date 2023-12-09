@@ -24,7 +24,7 @@ const Footer = () => {
           target={'_blank'}
           href='https://www.linkedin.com/in/mahmoud-rizk-elerqsousy/'
         >
-          Say hi!
+          Hire me!
         </Link>
       </Layout>
     </footer>
