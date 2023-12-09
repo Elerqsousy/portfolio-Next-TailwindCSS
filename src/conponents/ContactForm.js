@@ -11,12 +11,12 @@ const ContactForm = () => {
   const [isSubmitted, setSubmitted] = React.useState(false);
 
   const handleClose = () => {
+    setSubmitted(false);
     setIsOpen(false);
-    setSubmitted(false)
   };
 
   React.useEffect(() => {
-    if (state.succeeded) {
+    if (!!state.succeeded) {
       setSubmitted(true);
       setTimeout(() => {
         handleClose();
@@ -51,44 +51,67 @@ const ContactForm = () => {
             <button
               type='button'
               onClick={handleClose}
-              className='flex-col justify-center items-center'
+              className='flex-col justify-center items-center absolute top-12 left-12 md:top-9 md:left-9'
             >
-              <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm rotate-45 translate-y-1' />
-              <span className='bg-dark dark:bg-light block h-0.5 w-6 rounded-sm -rotate-45 -translate-y-1' />
+              <span className='bg-light dark:bg-dark block h-0.5 w-6 rounded-sm rotate-45 translate-y-1/2' />
+              <span className='bg-light dark:bg-dark block h-0.5 w-6 rounded-sm -rotate-45 -translate-y-1/2' />
             </button>
 
             {isSubmitted ? (
-              <div>
-                <h3>Thanks for your message!</h3>
-                <p>I will get back to you the soonest.</p>
+              <div className='flex flex-col items-center justify-center gap-4 text-light dark:text-dark'>
+                <h3 className='text-xl md:text-md'>Thanks for your message!</h3>
+                <p className='text-lg md:text-sm'>
+                  I will get back to you the soonest.
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <input id='name' type='name' name='name' placeholder='Name*' required />
-                  <ValidationError
-                    prefix='Name'
-                    field='name'
-                    errors={state.errors}
-                  />
-                </div>
-                <div>
-                  <input id='email' type='email' name='email' placeholder='Email*' required />
-                  <ValidationError
-                    prefix='Email'
-                    field='email'
-                    errors={state.errors}
-                  />
-                </div>
-                <div>
-                  <textarea id='message' name='message' placeholder='Message*' required />
-                  <ValidationError
-                    prefix='Message'
-                    field='message'
-                    errors={state.errors}
-                  />
-                </div>
-                <button type='submit' disabled={state.submitting}>
+              <form
+                onSubmit={handleSubmit}
+                className='flex flex-col gap-4 w-full p-14 md:p-8'
+              >
+                <input
+                  id='name'
+                  type='name'
+                  name='name'
+                  placeholder='Name*'
+                  required
+                  className='w-full rounded-md p-3 text-dark dark:text-light'
+                />
+                <ValidationError
+                  prefix='Name'
+                  field='name'
+                  errors={state.errors}
+                />
+                <input
+                  id='email'
+                  type='email'
+                  name='email'
+                  placeholder='Email*'
+                  required
+                  className='w-full rounded-md p-3 text-dark dark:text-light'
+                />
+                <ValidationError
+                  prefix='Email'
+                  field='email'
+                  errors={state.errors}
+                />
+                <textarea
+                  id='message'
+                  name='message'
+                  placeholder='Message*'
+                  required
+                  className='w-full rounded-md p-3 text-dark dark:text-light'
+                />
+                <ValidationError
+                  prefix='Message'
+                  field='message'
+                  errors={state.errors}
+                />
+                <button
+                  type='submit'
+                  disabled={state.submitting}
+                  className='mt-7 font-semibold p-3 w-full bg-light/75 dark:bg-dark/75 text-dark dark:text-light rounded-md'
+                >
                   Submit
                 </button>
               </form>
