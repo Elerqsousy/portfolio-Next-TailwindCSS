@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes';
 import Layout from '@/conponents/Layout';
 import AnimatedText from '@/conponents/AnimatedText';
 import { LinkArrow } from '@/conponents/icons';
+import TransitionEffect from '@/conponents/TransitionEffect';
 import profilePicLight from '../../public/images/profile/riz-art.png';
 import profilePicDark from '../../public/images/profile/riz-art-dark.png';
 
@@ -24,6 +25,7 @@ const Home = () => {
           content='A personal portfolio for Mahmoud Rizk. A Full Stack developer working with Ruby on Rails, React, Next.js, Redux, SQL, HTML, CSS, TailwindCSS, Bootstrap, and Sass.'
         />
       </Head>
+      <TransitionEffect />
       <main className='flex items-center text-dark w-full min-h-screen relative dark:text-light md:items-start'>
         <Layout className='!pt-0'>
           <div className='flex items-center justify-between w-full gap-16 lg:flex-col sm:gap-10'>
