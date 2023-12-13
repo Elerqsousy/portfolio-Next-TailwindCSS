@@ -6,41 +6,48 @@ import classNames from 'classnames';
 import { ContactFormContext } from './Context';
 
 const NewContactForm = () => {
-  const timer = React.useRef(null);
-
-  const [isOpen, setIsOpen] = React.useContext(ContactFormContext);
-  const [countdown, setCountdown] = React.useState(0);
+  const { isOpen, setIsOpen } = React.useContext(ContactFormContext);
+  const [countdown, setCountdown] = React.useState(-1);
   const [state, handleSubmit] = useForm('xpzgvlvj');
   const [isSubmitted, setSubmitted] = React.useState(false);
 
+  const resetForm = () => {
+    for (const form of document.getElementsByTagName('form')) {
+      form.reset();
+    }
+  };
   const handleClose = () => {
     setIsOpen(false);
+    resetForm();
+  };
+
+  const handleSubmitForm = (e) => {
+    setSubmitted(true);
+    setCountdown(10);
   };
 
   React.useEffect(() => {
-    if (countdown > 0) {
-       setTimeout(() => {
+    let timer;
+    if (countdown >= 0) {
+      timer = setTimeout(() => {
         setCountdown((prev) => prev - 1);
       }, 1000);
+
+      if (countdown === 0) {
+        handleClose();
+      }
     }
 
     return () => {
-      clearTimeout(timer.current);
+      clearTimeout(timer);
     };
-  }, []);
-
+  }, [countdown]);
 
   React.useEffect(() => {
     if (!!state.succeeded) {
-      setSubmitted(true);
-      setTimeout(() => {
-        handleClose();
-      }, 5000);
+      handleSubmitForm();
     }
-    return () => {
-        clearTimeout(timer.current);
-      };
-  }, [state.succeeded, handleClose]);
+  }, [state.succeeded]);
 
   return (
     <>
@@ -83,10 +90,20 @@ const NewContactForm = () => {
                 <p className='text-lg md:text-sm'>
                   I will get back to you the soonest.
                 </p>
-                {countdown > 0 && (
-                  <span ref={timer}>This pop-up will close in {countdown}</span>
+                {countdown > -1 && (
+                  <span>This pop-up will close in {countdown}</span>
                 )}
-                <button>Send another message</button>
+                <button
+                  type='button'
+                  onClick={resetForm}
+                  className='flex items-center bg-light/75 text-dark p-2.5 px-6 w-fit self-center
+                  mt-10 rounded-lg text-lg font-semibold hover:bg-dark/75 hover:text-light 
+                  border-2 border-solid  border-transparent hover:border-light/75
+                  dark:bg-dark dark:text-light dark:hover:bg-light/75 dark:hover:text-dark dark:border-dark/75
+                  md:p-2 md:px-4 md:text-sm active:scale-95 transition duration-150'
+                >
+                  Send another message
+                </button>
               </div>
             ) : (
               <form
@@ -134,7 +151,11 @@ const NewContactForm = () => {
                 <button
                   type='submit'
                   disabled={state.submitting}
-                  className='mt-7 font-semibold p-3 w-full bg-light/75 dark:bg-dark/75 text-dark dark:text-light rounded-md'
+                  className='flex items-center bg-light/75 text-dark p-2.5 px-6 w-fit self-center
+                  mt-10 rounded-lg text-lg font-semibold hover:bg-dark/75 hover:text-light 
+                  border-2 border-solid  border-transparent hover:border-light/75
+                  dark:bg-dark dark:text-light dark:hover:bg-light/75 dark:hover:text-dark dark:border-dark/75
+                  md:p-2 md:px-4 md:text-sm active:scale-95 transition duration-150'
                 >
                   Submit
                 </button>
