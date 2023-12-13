@@ -11,6 +11,7 @@ import Footer from '@/conponents/Footer';
 import NavBar from '@/conponents/NavBar';
 import ContactForm from '@/conponents/ContactForm';
 import { ContactFormContext } from '@/conponents/Context';
+import NewContactForm from '@/conponents/NewContactForm';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -32,7 +33,7 @@ export default function App({ Component, pageProps }) {
       >
         <ThemeProvider enableSystem={true} attribute='class'>
           <ContactFormContext.Provider value={{ isOpen, setIsOpen }}>
-            <ContactForm />
+            <NewContactForm />
             <NavBar />
             <AnimatePresence mode='wait'>
               <Component key={router.asPath} {...pageProps} />

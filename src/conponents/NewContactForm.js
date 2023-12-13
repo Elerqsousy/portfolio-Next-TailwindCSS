@@ -8,15 +8,27 @@ import { ContactFormContext } from './Context';
 const NewContactForm = () => {
   const timer = React.useRef(null);
 
-  const [ isOpen, setIsOpen ] = React.useContext(ContactFormContext);
-  const [countdown, setCountdown] = React.useState(5);
+  const [isOpen, setIsOpen] = React.useContext(ContactFormContext);
+  const [countdown, setCountdown] = React.useState(0);
   const [state, handleSubmit] = useForm('xpzgvlvj');
   const [isSubmitted, setSubmitted] = React.useState(false);
-
 
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  React.useEffect(() => {
+    if (countdown > 0) {
+       setTimeout(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+    }
+
+    return () => {
+      clearTimeout(timer.current);
+    };
+  }, []);
+
 
   React.useEffect(() => {
     if (!!state.succeeded) {
@@ -25,6 +37,9 @@ const NewContactForm = () => {
         handleClose();
       }, 5000);
     }
+    return () => {
+        clearTimeout(timer.current);
+      };
   }, [state.succeeded, handleClose]);
 
   return (
@@ -62,11 +77,15 @@ const NewContactForm = () => {
 
             {isSubmitted ? (
               <div className='flex flex-col items-center justify-center gap-4 text-light dark:text-dark'>
-                <h3 className='text-xl md:text-md'>Your message has been submitted successfully!</h3>
+                <h3 className='text-xl md:text-md'>
+                  Your message has been submitted successfully!
+                </h3>
                 <p className='text-lg md:text-sm'>
                   I will get back to you the soonest.
                 </p>
-                {countdown > 0 && <span ref={timer}>This pop-up will close in {countdown}</span>}
+                {countdown > 0 && (
+                  <span ref={timer}>This pop-up will close in {countdown}</span>
+                )}
                 <button>Send another message</button>
               </div>
             ) : (
