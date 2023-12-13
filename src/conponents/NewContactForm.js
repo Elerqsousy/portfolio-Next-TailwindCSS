@@ -6,15 +6,20 @@ import classNames from 'classnames';
 import { ContactFormContext } from './Context';
 
 const NewContactForm = () => {
+  const formRef = React.useRef(null);
   const { isOpen, setIsOpen } = React.useContext(ContactFormContext);
   const [countdown, setCountdown] = React.useState(-1);
   const [state, handleSubmit] = useForm('xpzgvlvj');
   const [isSubmitted, setSubmitted] = React.useState(false);
 
   const resetForm = () => {
-    for (const form of document.getElementsByTagName('form')) {
-      form.reset();
-    }
+    window.onbeforeunload = () => {
+      for (const form of document.getElementsByTagName('form')) {
+        form.reset();
+      }
+    };
+    setSubmitted(false);
+    setCountdown(-1);
   };
   const handleClose = () => {
     setIsOpen(false);
@@ -83,30 +88,38 @@ const NewContactForm = () => {
             </button>
 
             {isSubmitted ? (
-              <div className='flex flex-col items-center justify-center gap-4 text-light dark:text-dark'>
-                <h3 className='text-xl md:text-md'>
+              <div className='flex flex-col items-center justify-center gap-4 text-light dark:text-dark  text-center '>
+                <h3 className='text-lg md:text-sm'>
                   Your message has been submitted successfully!
                 </h3>
-                <p className='text-lg md:text-sm'>
+                <p className='text-sm md:text-xs'>
                   I will get back to you the soonest.
                 </p>
-                {countdown > -1 && (
-                  <span>This pop-up will close in {countdown}</span>
-                )}
+
                 <button
                   type='button'
                   onClick={resetForm}
                   className='flex items-center bg-light/75 text-dark p-2.5 px-6 w-fit self-center
-                  mt-10 rounded-lg text-lg font-semibold hover:bg-dark/75 hover:text-light 
+                  mt-5 rounded-lg text-lg font-semibold hover:bg-dark/75 hover:text-light 
                   border-2 border-solid  border-transparent hover:border-light/75
                   dark:bg-dark dark:text-light dark:hover:bg-light/75 dark:hover:text-dark dark:border-dark/75
                   md:p-2 md:px-4 md:text-sm active:scale-95 transition duration-150'
                 >
                   Send another message
                 </button>
+                {countdown > -1 && (
+                  <p className='mt-10 text-sm md:text-xs'>
+                    This pop-up will close in{' '}
+                    <span className='dark:text-primary text-primaryDark text-md md:text-sm'>
+                      {countdown}
+                    </span>{' '}
+                    seconds
+                  </p>
+                )}
               </div>
             ) : (
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className='flex flex-col gap-4 w-full p-14 md:p-8'
               >
