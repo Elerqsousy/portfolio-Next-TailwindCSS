@@ -52,7 +52,7 @@ const NewContactForm = () => {
     if (!!state.succeeded) {
       handleSubmitForm();
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, handleSubmitForm]);
 
   return (
     <>
