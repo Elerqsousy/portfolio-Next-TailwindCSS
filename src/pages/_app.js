@@ -11,7 +11,7 @@ import Footer from '@/conponents/Footer';
 import NavBar from '@/conponents/NavBar';
 import ContactForm from '@/conponents/ContactForm';
 import { ContactFormContext } from '@/conponents/Context';
-import NewContactForm from '@/conponents/NewContactForm';
+import NewContactForm from '@/conponents/ContactForm';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
