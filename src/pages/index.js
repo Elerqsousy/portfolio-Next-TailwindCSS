@@ -29,9 +29,9 @@ const Home = () => {
         />
       </Head>
       <TransitionEffect />
-      <main className='flex items-center text-dark w-full min-h-screen relative dark:text-light md:items-start md:pt-16'>
-        <Layout className='!pt-0'>
-          <div className='h-[100vh] flex items-center justify-between w-full gap-16 lg:flex-col lg:justify-start xs:gap-10'>
+      <main className='flex items-center text-dark w-full min-h-screen relative dark:text-light md:items-start md:pt-16 h-fit-content'>
+        <Layout className='!pt-0 overflow-scroll'>
+          <div className='h-[100vh] flex items-center justify-between w-full gap-16 lg:flex-col lg:justify-start xs:gap-10 md:mb-[200px] '>
             <div className='w-1/3 min-w-[350px] flex justify-center lg:hidden md:flex'>
               <Image
                 src={
